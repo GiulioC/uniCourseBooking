@@ -1,0 +1,22 @@
+{
+  "name": "prenotazionecorsi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cron": "^1.8.2",
+    "dotenv": "^10.0.0",
+    "form-data": "^4.0.0",
+    "got": "^11.8.2",
+    "moment": "^2.29.1",
+    "node-html-parser": "^5.0.0",
+    "pg": "^8.7.1",
+    "telegraf": "^4.4.2"
+  }
+}
