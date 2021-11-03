@@ -189,12 +189,16 @@ bot.command('/attiva_prenotazioni', async (ctx) => {
         COURSES = await getCoursesDetails(config.courses);
     }
     checkNewBookings.start();
-    ctx.reply('Scansione avviata');
+    config.allowedChatIds.forEach(chatId => {
+        bot.telegram.sendMessage(chatId, 'Scansione avviata');
+    });
 });
 
 bot.command('/ferma_prenotazioni', (ctx) => {
     checkNewBookings.stop();
-    ctx.reply('Scansione arrestata');
+    config.allowedChatIds.forEach(chatId => {
+        bot.telegram.sendMessage(chatId, 'Scansione arrestata');
+    });
 });
 
 bot.command('/lista_prenotazioni', async (ctx) => {
