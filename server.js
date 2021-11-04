@@ -24,8 +24,8 @@ const client = new Client({
 })
 client.connect();
 
-
-const checkNewBookings = new CronJob('*/10 * * * * *', async function() {
+// */5 * * * *: every 5 minutes
+const checkNewBookings = new CronJob('*/5 * * * *', async function() {
     COURSES.forEach(course => {
         logPageCheck(course.id);
         getCourseBookings(course.id, bookings => {
@@ -226,5 +226,5 @@ bot.launch({
   }
 });
 
-process.once('SIGINT', () => bot.stop('SIGINT'))
-process.once('SIGTERM', () => bot.stop('SIGTERM'))
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
